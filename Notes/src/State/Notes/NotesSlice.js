@@ -1,4 +1,4 @@
-import { creatSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
 /*
@@ -13,10 +13,65 @@ import { v4 as uuidv4 } from 'uuid';
         "dateModified": "1233847384"
     }
 */
-const initialState = [];
+const initialState = [
+    // {
+    //     id: uuidv4(),
+    //     title: 'Note Title',
+    //     content: 'Note Content',
+    //     pinned: true,
+    //     dateCreated: Date.now(),
+    //     dateModified: Date.now()
+    
+    // },
+    // {
+    //     id: uuidv4(),
+    //     title: 'Note Title',
+    //     content: 'Note Content',
+    //     pinned: true,
+    //     dateCreated: Date.now(),
+    //     dateModified: Date.now()
+    
+    // },
+    // {
+    //     id: uuidv4(),
+    //     title: 'Note Title',
+    //     content: 'Note Content',
+    //     pinned: true,
+    //     dateCreated: Date.now(),
+    //     dateModified: Date.now()
+    
+    // },
+    {
+        id: uuidv4(),
+        title: 'Note Title',
+        content: 'Note Content',
+        pinned: false,
+        dateCreated: Date.now(),
+        dateModified: Date.now()
+    
+    },
+    {
+        id: uuidv4(),
+        title: 'Note Title',
+        content: 'Note Content',
+        pinned: false,
+        dateCreated: Date.now(),
+        dateModified: Date.now()
+    
+    },
+    {
+        id: uuidv4(),
+        title: 'Note Title',
+        content: 'Note Content',
+        pinned: false,
+        dateCreated: Date.now(),
+        dateModified: Date.now()
+    
+    },
+];
 
 /*
-    We will have many actions for notes, so we will use creatSlice() to create a reducer
+    We will have many actions for notes, so we will use createSlice() to create a reducer
     the actions that we will have are the next:
     - addNote
     - editNote
@@ -24,12 +79,12 @@ const initialState = [];
     - pinNote
     - unpinNote
 */
-const notesSlice = creatSlice({
+const notesSlice = createSlice({
     name: 'notes',
     initialState,
     reducers: {
         addNote: (state, action) => {
-            const { title, content} = action.payload;
+            const { title, content } = action.payload;
             state.push({
                 id: uuidv4(),
                 title,
