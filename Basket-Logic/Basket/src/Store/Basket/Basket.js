@@ -7,24 +7,23 @@ const BasketSlice = createSlice({
   initialState,
   reducers: {
     add: (state, action) => {
-      const { product } = action.payload;
+      let { product } = action.payload;
+      // check if the product is already in the basket
+      const index = state.findIndex((item) => item._id === product._id);
+      if (index !== -1) return;
       state.push(product);
-    },
-    remove: (state, action) => {
-      const { id } = action.payload;
-      const index = state.findIndex((product) => product.id === id);
-      state.splice(index, 1);
+      state[state.length - 1].quantity = 1;
     },
     increment: (state, action) => {
       const { id } = action.payload;
-      const index = state.findIndex((product) => product.id === id);
+      const index = state.findIndex((product) => product._id === id);
       if (index !== -1 && state[index].quantity < state[index].stock) {
         state[index].quantity += 1;
       }
     },
     decrement: (state, action) => {
       const { id } = action.payload;
-      const index = state.findIndex((product) => product.id === id);
+      const index = state.findIndex((product) => product._id === id);
       if (index !== -1) {
         state[index].quantity -= 1;
         if (state[index].quantity === 0) {
@@ -35,5 +34,5 @@ const BasketSlice = createSlice({
   },
 });
 
-export const { add, remove, increment, decrement } = BasketSlice.actions;
+export const { add, increment, decrement } = BasketSlice.actions;
 export default BasketSlice.reducer;

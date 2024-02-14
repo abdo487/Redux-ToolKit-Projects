@@ -19,7 +19,4 @@
   margin: 0;
   box-sizing: border-box;
 }
-a,
-button {
-  all: unset;
-}
+
