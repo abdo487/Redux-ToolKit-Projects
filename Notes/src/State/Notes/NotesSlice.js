@@ -14,47 +14,11 @@ import { v4 as uuidv4 } from 'uuid';
     }
 */
 const initialState = [
-    // {
-    //     id: uuidv4(),
-    //     title: 'Note Title',
-    //     content: 'Note Content',
-    //     pinned: true,
-    //     dateCreated: Date.now(),
-    //     dateModified: Date.now()
-    
-    // },
-    // {
-    //     id: uuidv4(),
-    //     title: 'Note Title',
-    //     content: 'Note Content',
-    //     pinned: true,
-    //     dateCreated: Date.now(),
-    //     dateModified: Date.now()
-    
-    // },
-    // {
-    //     id: uuidv4(),
-    //     title: 'Note Title',
-    //     content: 'Note Content',
-    //     pinned: true,
-    //     dateCreated: Date.now(),
-    //     dateModified: Date.now()
-    
-    // },
     {
         id: uuidv4(),
         title: 'Note Title',
         content: 'Note Content',
-        pinned: false,
-        dateCreated: Date.now(),
-        dateModified: Date.now()
-    
-    },
-    {
-        id: uuidv4(),
-        title: 'Note Title',
-        content: 'Note Content',
-        pinned: false,
+        pinned: true,
         dateCreated: Date.now(),
         dateModified: Date.now()
     
